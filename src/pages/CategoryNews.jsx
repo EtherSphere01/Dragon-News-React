@@ -23,8 +23,20 @@ const CategoryNews = () => {
       const filterNews = data.filter((news) => news.category_id == id);
       setCategoryNews(filterNews);
     }
-    setCurrentPage(1); // Reset to page 1 when id changes
+    setCurrentPage(1);
   }, [data, id]);
+
+  const [category, setCategory] = useState("");
+  useEffect(() => {
+    fetch("/demo-data/categories.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const found = data.find((item) => item.id == id);
+        if (found) {
+          setCategory(found.name);
+        }
+      });
+  }, [id]);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -34,8 +46,9 @@ const CategoryNews = () => {
   return (
     <div>
       <div className="grid grid-cols-1 gap-5">
+        <h1 className="font-bold">{category}</h1>
         {currentNews.map((news) => (
-          <NewsCard key={news.id} news={news}></NewsCard>
+          <NewsCard key={news.id} news={news} id={id}></NewsCard>
         ))}
       </div>
 

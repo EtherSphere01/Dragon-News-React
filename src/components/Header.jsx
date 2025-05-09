@@ -9,7 +9,7 @@ const Header = () => {
       <p className="text-accent">Journalism Without Fear or Favour</p>
       <p>
         <span className="font-semibold text-accent">
-          {format(new Date(), "EEEE, MMMM MM, yyyy")}
+          {format(new Date(), "EEEE, MMMM dd, yyyy")}
         </span>
       </p>
     </div>

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaStar, FaEye, FaShareAlt } from "react-icons/fa";
 import { CiBookmark } from "react-icons/ci";
 
-const NewsCard = ({ news }) => {
+const NewsCard = ({ news, id }) => {
   const {
     title,
     author,
