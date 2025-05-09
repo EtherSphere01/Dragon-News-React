@@ -1,11 +1,26 @@
-import React from "react";
+import React, { use, useContext, useEffect } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const SocialLogin = () => {
+  const { googleLogin } = use(AuthContext);
+  const handleGoogle = () => {
+    googleLogin()
+      .then((result) => {
+        const loggedUser = result.user;
+       
+      })
+      .catch((error) => {
+        
+      });
+  };
   return (
     <div>
       <h2 className="font-bold mb-5">Login With</h2>
       <div className="flex flex-col gap-3">
-        <button className="btn bg-white text-black border-[#e5e5e5] hover:bg-base-200">
+        <button
+          onClick={handleGoogle}
+          className="btn bg-white text-black border-[#e5e5e5] hover:bg-base-200"
+        >
           <svg
             aria-label="Google logo"
             width="16"

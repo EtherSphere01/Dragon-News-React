@@ -20,7 +20,7 @@ const Login = () => {
       })
       .catch((error) => {
         const errorMessage = error.message;
-        console.error(errorMessage);
+        
       });
   };
   return (
