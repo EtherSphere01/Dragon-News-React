@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaStar, FaEye, FaShareAlt } from "react-icons/fa";
 import { CiBookmark } from "react-icons/ci";
+import { Link } from "react-router";
 
 const NewsCard = ({ news, id }) => {
   const {
@@ -11,6 +12,7 @@ const NewsCard = ({ news, id }) => {
     image_url,
     published_date,
     details,
+    id: news_id,
   } = news;
 
   const formattedDate = new Date(news.author.published_date).toLocaleDateString(
@@ -56,9 +58,12 @@ const NewsCard = ({ news, id }) => {
 
       <div className="px-4 pt-4 pb-2 text-sm text-gray-700 ">
         {details.slice(0, 200)}...
-        <span className="text-orange-600 font-semibold cursor-pointer ml-1">
+        <Link
+          to={`/newsDetails/${news_id}`}
+          className="text-orange-600 font-semibold cursor-pointer ml-1"
+        >
           Read More
-        </span>
+        </Link>
       </div>
       <div className="divider my-1" />
 
