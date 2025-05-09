@@ -1,3 +1,5 @@
+# Live Link : [Live Demo](https://dragon-news-react25.netlify.app/)
+
 # <img src="assets/logo.png">
 
 Dragoon News is a responsive front-end web application build with react that delivers real-time news articles on a variety of topics, complete with user authentication for personalized access. Built with modern web technologies, the app ensures a seamless user experience across devices and secure login functionality using firebase authentication.let's build the project together. 😎
@@ -22,3 +24,5 @@ There will be three layour for the project. watch below designs to understand la
    <td> <img src="https://i.ibb.co.com/27Rmt7C5/auth-layout-register.png"/></td>
  </tr> 
 </table>
+
+### Resources from programming hero
